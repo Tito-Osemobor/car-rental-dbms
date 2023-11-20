@@ -9,7 +9,7 @@ const CreateTable = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const response = await createNewTable(tableName, sql);
-        response.data === tableName.toUpperCase() + " successfully created!"
+        response === tableName.toUpperCase() + " successfully created!"
             ? alert(tableName.toUpperCase() + " successfully created!")
             : alert("An Error Occurred!");
         setTableName("");
