@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {getAllTables, getTableContent} from "../utilities/api";
+import Table from "../components/Table";
 
 
 const ViewTable = () => {
@@ -21,16 +22,6 @@ const ViewTable = () => {
         getTablesList();
     }, []);
 
-    const renderCellContent = (value) => {
-        const isImage = value && typeof value === 'string' && /\.(png|jpg|jpeg|gif|svg|webp)$/.test(value.toLowerCase());
-
-        if (isImage) {
-            return <img src={value} alt="Table Cell" style={{ maxWidth: '100%', maxHeight: '100%' }} />;
-        } else {
-            return value;
-        }
-    };
-
     return (
         <>
             <h1 className={"text-xl font-bold mt-6"}>VIEW TABLES</h1>
@@ -51,25 +42,7 @@ const ViewTable = () => {
             {selectedTable && tableContent && tableContent.length > 0 && (
                 <div>
                     <h2 className={"font-semibold text-2xl text-center"}>{selectedTable} TABLE</h2>
-                    <table className="table-content">
-                        <thead>
-                        <tr>
-                            {tableContent.length > 0 &&
-                                Object.keys(tableContent[0]).map((column, index) => (
-                                    <th key={index}>{column}</th>
-                            ))}
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {tableContent.map((row, rowIndex) => (
-                            <tr key={rowIndex}>
-                                {Object.values(row).map((value, colIndex) => (
-                                    <td key={colIndex}>{renderCellContent(value)}</td>
-                                ))}
-                            </tr>
-                        ))}
-                        </tbody>
-                    </table>
+                    <Table tableContent={tableContent}/>
                 </div>
             )}
         </>
