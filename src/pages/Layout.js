@@ -1,21 +1,22 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
+import Button from "../components/Button";
 
 const Layout = () => {
     return (
         <>
             <nav className={"text-center flex flex-col items-center mt-6 gap-6"}>
                 <Link to="/create">
-                    <button className={"bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow w-36"}>Create Table</button>
+                    <Button content={"Create Table"} />
                 </Link>
                 <Link to="/view">
-                    <button className={"bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow w-36"}>View Tables</button>
+                    <Button content={"View Tables"} />
                 </Link>
                 <Link to="/drop">
-                    <button className={"bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow w-36"}>Drop Tables</button>
+                    <Button content={"Drop Tables"} />
                 </Link>
                 <Link to="/queries">
-                    <button className={"bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow w-36"}>Run Queries</button>
+                    <Button content={"Run Queries"} />
                 </Link>
             </nav>
             <Outlet />
