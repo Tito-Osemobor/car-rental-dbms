@@ -1,9 +1,9 @@
-import {Routes, Route, BrowserRouter, Link} from 'react-router-dom';
+import {Routes, Route, Link} from 'react-router-dom';
 import CreateTable from "./pages/CreateTable";
 import ViewTable from "./pages/ViewTable";
 import DropTable from "./pages/DropTable";
+import Queries from "./pages/Queries";
 import Layout from "./pages/Layout";
-import React, {useEffect, useState} from "react";
 import HomeIcon from "@mui/icons-material/Home";
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
                     <Route path="/create" element={<CreateTable />} />
                     <Route path="/view" element={<ViewTable />} />
                     <Route path="/drop" element={<DropTable />} />
+                    <Route path="/queries" element={<Queries />} />
                 </Routes>
             </div>
         </div>
