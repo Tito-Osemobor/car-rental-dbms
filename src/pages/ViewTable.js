@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {getAllTables, getTableContent} from "../utilities/api";
 import Table from "../components/Table";
+import Button from "../components/Button";
 
 
 const ViewTable = () => {
@@ -29,12 +30,10 @@ const ViewTable = () => {
                 <ul className='list-none grid grid-cols-3 gap-4 my-6'>
                     {tables.map((table, index) => (
                         <li key={index} className={"text-left"}>
-                            <button
-                                onClick={() => {getTableData(table); setSelectedTable(table); }}
-                                className={"bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow w-48"}
-                            >
-                                {table}
-                            </button>
+                            <Button
+                                content={table}
+                                onclick={() => {getTableData(table); setSelectedTable(table); }}
+                            />
                         </li>
                     ))}
                 </ul>
