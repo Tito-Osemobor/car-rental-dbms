@@ -31,7 +31,7 @@ export const createNewTable = async(tableName, sql) => {
             tableName: tableName,
             sql: sql
         }
-    ));
+    )).data;
 }
 
 export const dropSelectedTable = async(tableName) => {
@@ -44,4 +44,11 @@ export const dropSelectedTable = async(tableName) => {
             }
         }
     ));
+}
+
+export const getAllQueryResults = async() => {
+    const endpoint = "/tables/queries";
+    return (await axios.get(
+        `${baseUrl}${endpoint}`
+    )).data;
 }
