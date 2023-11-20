@@ -9,7 +9,7 @@ import HomeIcon from "@mui/icons-material/Home";
 function App() {
     return (
         <div className="App">
-            <div className={"cursor-pointer"}>
+            <div>
                 <Link to="/"><HomeIcon sx={{
                     fontSize: '40px'
                 }}/></Link>
