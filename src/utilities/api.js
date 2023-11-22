@@ -52,3 +52,18 @@ export const getAllQueryResults = async() => {
         `${baseUrl}${endpoint}`
     )).data;
 }
+
+export const getTableColumns = async(tableName) => {
+    const endpoint = `/tables/${tableName}/columns`;
+    return (await axios.get(
+        `${baseUrl}${endpoint}`
+    )).data;
+}
+
+export const createNewTableRecord = async(tableName, record) => {
+    const endpoint = `/tables/${tableName}/new`;
+    return (await axios.post(
+        `${baseUrl}${endpoint}`,
+        record
+    )).data;
+}
