@@ -15,6 +15,9 @@ const Layout = () => {
                 <Link to="/drop">
                     <Button content={"Drop Tables"} />
                 </Link>
+                <Link to="/add">
+                    <Button content={"Add Records"} />
+                </Link>
                 <Link to="/queries">
                     <Button content={"Run Queries"} />
                 </Link>
