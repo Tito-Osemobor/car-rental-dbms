@@ -30,8 +30,8 @@ const AddRecord = () => {
         }));
     };
 
-    const handleInsertClick = () => {
-        const response = createNewTableRecord(selectedTable, rowData);
+    const handleInsertClick = async() => {
+        const response = await createNewTableRecord(selectedTable, rowData);
         alert(response);
         console.log(response);
         setRowData(initialState);
@@ -53,7 +53,7 @@ const AddRecord = () => {
                 </ul>
             </div>
             {
-                selectedTable && columns && (
+                selectedTable && columns && columns.length > 0 && (
                     <div>
                         <table className="table-content mb-10">
                             <thead>
