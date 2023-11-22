@@ -43,7 +43,7 @@ export const dropSelectedTable = async(tableName) => {
                 tableName: tableName
             }
         }
-    ));
+    )).data;
 }
 
 export const getAllQueryResults = async() => {
@@ -65,5 +65,15 @@ export const createNewTableRecord = async(tableName, record) => {
     return (await axios.post(
         `${baseUrl}${endpoint}`,
         record
+    )).data;
+}
+
+export const deleteSelectedRecord = async(tableName, record) => {
+    const endpoint = `/tables/${tableName}/delete`;
+    return (await axios.delete(
+        `${baseUrl}${endpoint}`,
+        {
+            data: record
+        }
     )).data;
 }
