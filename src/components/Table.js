@@ -1,15 +1,16 @@
 import React from 'react';
 
-const Table = ({ tableContent }) => {
-    const renderCellContent = (value) => {
-        const isImage = value && typeof value === 'string' && /\.(png|jpg|jpeg|gif|svg|webp)$/.test(value.toLowerCase());
+export const renderCellContent = (value) => {
+    const isImage = value && typeof value === 'string' && /\.(png|jpg|jpeg|gif|svg|webp)$/.test(value.toLowerCase());
 
-        if (isImage) {
-            return <img src={value} alt="Table Cell" style={{ maxWidth: '100%', maxHeight: '100%' }} />;
-        } else {
-            return value;
-        }
-    };
+    if (isImage) {
+        return <img src={value} alt="Table Cell" style={{ maxWidth: '100%', maxHeight: '100%' }} />;
+    } else {
+        return value;
+    }
+};
+
+const Table = ({ tableContent }) => {
 
     return (
         <table className="table-content">

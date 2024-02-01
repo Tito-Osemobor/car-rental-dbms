@@ -33,8 +33,8 @@ const AddRecord = () => {
     const handleInsertClick = async() => {
         const response = await createNewTableRecord(selectedTable, rowData);
         alert(response);
-        console.log(response);
         setRowData(initialState);
+        setSelectedTable(null);
     };
 
     return (

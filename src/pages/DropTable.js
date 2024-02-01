@@ -17,7 +17,7 @@ const DropTable = () => {
         const isConfirmed = window.confirm("Are you sure you want to proceed?");
         if (isConfirmed) {
             const response = await dropSelectedTable(tableName);
-            response.data === tableName.toUpperCase() + " successfully dropped!"
+            response === tableName.toUpperCase() + " successfully dropped!"
                 ? alert(tableName.toUpperCase() + " successfully dropped!")
                 : alert("An Error Occurred!");
         }

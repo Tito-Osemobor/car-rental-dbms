@@ -18,6 +18,12 @@ const Layout = () => {
                 <Link to="/add">
                     <Button content={"Add Records"} />
                 </Link>
+                <Link to="/delete">
+                    <Button content={"Delete Records"} />
+                </Link>
+                <Link to="/update">
+                    <Button content={"Update Records"} />
+                </Link>
                 <Link to="/queries">
                     <Button content={"Run Queries"} />
                 </Link>

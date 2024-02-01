@@ -5,6 +5,8 @@ import DropTable from "./pages/DropTable";
 import Queries from "./pages/Queries";
 import Layout from "./pages/Layout";
 import AddRecord from "./pages/AddRecord";
+import DeleteRecord from "./pages/DeleteRecord";
+import UpdateRecord from "./pages/UpdateRecord";
 import HomeIcon from "@mui/icons-material/Home";
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
                     <Route path="/view" element={<ViewTable />} />
                     <Route path="/drop" element={<DropTable />} />
                     <Route path="/add" element={<AddRecord />} />
+                    <Route path="/delete" element={<DeleteRecord />} />
+                    <Route path="/update" element={<UpdateRecord />} />
                     <Route path="/queries" element={<Queries />} />
                 </Routes>
             </div>
